@@ -12,7 +12,7 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let item of loadedAlbums">
-      <app-card [data]="item"></app-card>
+      <app-card (click)="presentModal(item)" [data]="item" [isDetailedView]="false"></app-card>
     </ion-item>
   </ion-list>
 
