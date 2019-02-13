@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { SessionStorageService } from '../shared/services/session-storage/session-storage.service';
 import { Router } from '@angular/router';
-import { ROUTES_PATH } from '../shared/models/const';
 import { FormGroup } from '@angular/forms';
-import { AuthService } from '../shared/services/authentication/auth.service';
+import { AuthService } from 'src/app/shared/services/authentication/auth.service';
+import { ROUTES_PATH } from 'src/app/shared/models/const';
 
 @Component({
   selector: 'app-login',

@@ -5,7 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
 import { LoginPage } from './login.page';
-import { NotAuthorizedGuard } from '../shared/guards/not-auth-guard';
+import { NotAuthorizedGuard } from 'src/app/shared/guards/not-auth-guard';
 
 @NgModule({
   imports: [

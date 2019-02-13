@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -6,13 +6,15 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthService } from './shared/services/authentication/auth.service';
 import { Router } from '@angular/router';
 import { ROUTES_PATH } from './shared/models/const';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   isLoggedIn: boolean = false;
+  subscription: Subscription;
 
   public appPages = [
     {
@@ -40,9 +42,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.authService.loggedInSubject.subscribe((isLoggedIn: boolean) => {
+    this.subscription = this.authService.loggedInSubject.subscribe((isLoggedIn: boolean) => {
       this.isLoggedIn = isLoggedIn;
-      console.log('this.isLoggedIn ', this.isLoggedIn);
     });
   }
 
@@ -56,5 +57,9 @@ export class AppComponent implements OnInit {
   logOut() {
     this.authService.logout();
     this.router.navigate([ROUTES_PATH.Login]);
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }
