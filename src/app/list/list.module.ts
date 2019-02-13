@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
 import { ListPage } from './list.page';
+import { AuthorizedGuard } from '../shared/guards/auth-guard';
 
 @NgModule({
   imports: [
@@ -14,10 +15,11 @@ import { ListPage } from './list.page';
     RouterModule.forChild([
       {
         path: '',
-        component: ListPage
+        component: ListPage,
+        canActivate: [AuthorizedGuard]
       }
     ])
   ],
   declarations: [ListPage]
 })
-export class ListPageModule {}
+export class ListPageModule { }

@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-split-pane>
+  <ion-split-pane *ngIf="isLoggedIn">
     <ion-menu>
       <ion-header>
         <ion-toolbar>
@@ -16,9 +16,20 @@
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item (click)="logOut()">
+              <ion-icon slot="start" name="login"></ion-icon>
+              <ion-label>
+                Logout
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
         </ion-list>
       </ion-content>
     </ion-menu>
     <ion-router-outlet main></ion-router-outlet>
   </ion-split-pane>
+  <ng-container *ngIf="!isLoggedIn">
+    <ion-router-outlet main></ion-router-outlet>
+  </ng-container>
 </ion-app>
