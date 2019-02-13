@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListPage } from './list.page';
 import { AuthorizedGuard } from 'src/app/shared/guards/auth-guard';
 import { HttpService } from 'src/app/shared/services/http/http.service';
+import { CardComponent } from './components/card/card.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -22,7 +24,7 @@ import { HttpService } from 'src/app/shared/services/http/http.service';
       }
     ])
   ],
-  declarations: [ListPage],
+  declarations: [ListPage, CardComponent],
   providers: [HttpService]
 })
 export class ListPageModule { }
