@@ -3,3 +3,5 @@ export const ROUTES_PATH = {
   List: '/list',
   Chat: '/chat',
 };
+
+export const ITEM_PER_PAGE = 5;

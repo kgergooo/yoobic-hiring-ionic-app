@@ -11,17 +11,26 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
+    <ion-item *ngFor="let item of loadedAlbums">
+      <ion-card>
+          <ion-card-header>
+              <ion-img [src]="item.thumbnailUrl"></ion-img>
+          </ion-card-header>
+            
+          <ion-card-content>
+              <ion-card-title>{{item.title}}</ion-card-title>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+          </ion-card-content>
+      </ion-card>
     </ion-item>
   </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+
+  <ion-infinite-scroll (ionInfinite)="onScroll($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
 </ion-content>
