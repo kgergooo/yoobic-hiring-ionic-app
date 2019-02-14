@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthService } from './shared/services/authentication/auth.service';
 import { Router } from '@angular/router';
-import { ROUTES_PATH } from './shared/models/const';
+import { ROUTES_PATH, APP_PAGES } from './shared/models/const';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -15,20 +15,7 @@ import { Subscription } from 'rxjs';
 export class AppComponent implements OnInit, OnDestroy {
   isLoggedIn: boolean = false;
   subscription: Subscription;
-
-  public appPages = [
-    {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
-    }
-    // TODO: Should be implemented
-    // {
-    //   title: 'Chat',
-    //   url: '/chat',
-    //   icon: 'chat'
-    // }
-  ];
+  appPages = APP_PAGES;
 
   constructor(
     public authService: AuthService,

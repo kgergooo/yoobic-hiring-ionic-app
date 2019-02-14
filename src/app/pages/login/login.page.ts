@@ -22,6 +22,7 @@ export class LoginPage implements OnInit {
   }
 
   initForm(): void {
+    // Init form with validation
     this.loginFormGroup = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.pattern(EMAIL_PATTERN)]),
       password: new FormControl('', [Validators.required])

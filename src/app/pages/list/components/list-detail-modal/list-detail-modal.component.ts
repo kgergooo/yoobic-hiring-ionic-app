@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
 import { Album } from 'src/app/shared/models/models';
 
@@ -12,7 +12,7 @@ export class ListDetailModalComponent {
   constructor(
     private modalController: ModalController,
     private navParams: NavParams
-  ) {}
+  ) { }
 
   navigateBack() {
     this.modalController.dismiss(null);

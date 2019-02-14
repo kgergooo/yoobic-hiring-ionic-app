@@ -1,30 +1,31 @@
 <ion-content text-center>
-    <ion-avatar text-center>
-        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-    </ion-avatar>
-    <ion-title>Sign-In</ion-title>
+  <ion-avatar text-center>
+    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+  </ion-avatar>
+  <ion-title>Sign-In</ion-title>
   <form [formGroup]="loginFormGroup">
-      <ion-row>
-        <ion-col>
-          <ion-list inset>
-            
-            <ion-item>
-              <ion-input color="primary" type="text" placeholder="Email" name="email" [formControlName]="EMAIL"></ion-input>
-            </ion-item>
-            
-            <ion-item>
-              <ion-input type="password" placeholder="Password" name="password" [formControlName]="PASSWORD"></ion-input>
-            </ion-item>
-            
-          </ion-list>
-        </ion-col>
-      </ion-row>
-      <p>All fields are required!</p>
-      <ion-row>
-        <ion-col class="signup-col">
-          <ion-button color="primary" (click)="login()" [disabled]="!loginFormGroup?.valid">Login</ion-button>
-          <ion-button color="primary">Create New Account</ion-button>
-        </ion-col>
-      </ion-row>
-    </form>
+    <ion-row>
+      <ion-col>
+        <ion-list inset>
+
+          <ion-item>
+            <ion-input color="primary" type="text" placeholder="Email" name="email" [formControlName]="EMAIL">
+            </ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input type="password" placeholder="Password" name="password" [formControlName]="PASSWORD"></ion-input>
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <p>All fields are required!</p>
+    <ion-row>
+      <ion-col class="signup-col">
+        <ion-button color="primary" (click)="login()" [disabled]="!loginFormGroup?.valid">Login</ion-button>
+        <ion-button color="primary">Create New Account</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>

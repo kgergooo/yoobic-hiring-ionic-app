@@ -1,12 +1,11 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start" (click)="navigateBack()">
-        <ion-back-button defaultHref="list"></ion-back-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content>
-      <app-card *ngIf="album" [data]="album" [isDetailedView]="true"></app-card>
-  </ion-content>
-  
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="navigateBack()">
+      <ion-back-button defaultHref="list"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-card *ngIf="album" [data]="album" [isDetailedView]="true"></app-card>
+</ion-content>

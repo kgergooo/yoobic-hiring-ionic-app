@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, Router } from '@angular/router';
 import { ROUTES_PATH } from '../models/const';
-import { SessionStorageService } from '../services/session-storage/session-storage.service';
+import { StorageService } from '../services/storage/storage.service';
 
 @Injectable()
 export class NotAuthorizedGuard implements CanActivate {
   constructor(
     private router: Router,
-    private sessionStorage: SessionStorageService
+    private storage: StorageService
   ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    if (this.sessionStorage.isAuthenticated()) {
+    if (this.storage.isAuthenticated()) {
       this.router.navigate([ROUTES_PATH.List]);
       return false;
     }

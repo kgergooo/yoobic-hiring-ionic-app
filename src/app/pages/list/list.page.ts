@@ -3,28 +3,25 @@ import { Album } from '../../shared/models/models';
 import { HttpService } from 'src/app/shared/services/http/http.service';
 import { environment } from 'src/environments/environment.prod';
 import { ITEM_PER_PAGE } from 'src/app/shared/models/const';
-import { IonInfiniteScroll, Platform } from '@ionic/angular';
+import { IonInfiniteScroll } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
 import { ListDetailModalComponent } from './components/list-detail-modal/list-detail-modal.component';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-list',
-  templateUrl: 'list.page.html',
-  styleUrls: ['list.page.scss']
+  templateUrl: 'list.page.html'
 })
 export class ListPage implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
   public currentPage: number = 0;
-
-  allAlbums: Album[] = [];
-  loadedAlbums: Album[] = [];
+  public allAlbums: Album[] = [];
+  public loadedAlbums: Album[] = [];
 
   constructor(
     public modalController: ModalController,
     private httpService: HttpService
-    ) {  }
+  ) { }
 
   ngOnInit() {
     this.getData();
