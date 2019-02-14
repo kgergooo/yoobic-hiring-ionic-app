@@ -3,5 +3,5 @@ Ionic 4 Hiring project made by Kajtar Gergely!
 
 # Compile
 
-npm install
+npm install,
 ionic serve
