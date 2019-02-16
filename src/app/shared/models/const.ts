@@ -12,4 +12,8 @@ export const APP_PAGES = [{
   title: 'List',
   url: '/list',
   icon: 'list'
+}, {
+  title: 'Stencil date/time picker',
+  url: '/demo-web-component',
+  icon: 'list'
 }];

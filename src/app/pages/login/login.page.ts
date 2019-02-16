@@ -10,8 +10,8 @@ import { ROUTES_PATH, EMAIL_PATTERN } from 'src/app/shared/models/const';
   styleUrls: ['login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  loginFormGroup: FormGroup;
 
+  loginFormGroup: FormGroup;
   readonly EMAIL: string = 'email';
   readonly PASSWORD: string = 'password';
 

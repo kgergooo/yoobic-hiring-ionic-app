@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: './pages/list/list.module#ListPageModule'
+  },
+  {
+    path: 'demo-web-component',
+    loadChildren: './pages/demo-web-component/demo-web-component.module#DemoWebComponentPageModule'
   }
 ];
 

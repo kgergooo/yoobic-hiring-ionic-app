@@ -1,0 +1,49 @@
+{
+  "components": [
+    {
+      "tag": "datetime-picker",
+      "dependencies": [],
+      "componentClass": "DateTimePicker",
+      "componentPath": "components/datetime-picker/datetime-picker.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/datetime-picker/datetime-picker.css"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "selectedDate",
+          "mutable": true,
+          "reflectToAttr": true,
+          "attr": "selected-date",
+          "watch": [
+            "watchHandler"
+          ]
+        }
+      ],
+      "states": [
+        {
+          "name": "daysInMonth"
+        },
+        {
+          "name": "selectedTime"
+        }
+      ],
+      "events": [
+        {
+          "event": "onDateSelected"
+        }
+      ],
+      "shadow": true
+    }
+  ],
+  "collections": [],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "0.16.2",
+    "typescriptVersion": "3.2.2"
+  },
+  "bundles": []
+}
